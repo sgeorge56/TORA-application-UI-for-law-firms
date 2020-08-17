@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Page Title</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="autosaveform.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+
+
+
+
+
+<script>
+
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+/*****************************************changing colours on finished fields**********************************************/
+function canChangeColor(){ 
+ document.querySelector( '[ href="#first" ]' ).style.background = "green";
+  }
+  
+function canChangeColor1(){ 
+ document.querySelector( '[ href="#second" ]' ).style.background = "green";
+  }
+  
+  function canChangeColor2(){ 
+ document.querySelector( '[ href="#third" ]' ).style.background = "green";
+  }
+  
+   function canChangeColor3(){ 
+ document.querySelector( '[ href="#fourth" ]' ).style.background = "green";
+  }
+  
+  function canChangeColor4(){ 
+ document.querySelector( '[ href="#fifth" ]' ).style.background = "green";
+  }
+/******************************************** sticky scrollbar ***************************************************************/
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+/********************************************************for the summary box ****************************/
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction1()};
+
+// Get the navbar
+var summary = document.getElementById("summary");
+
+// Get the offset position of the navbar
+var sticky = summary.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction1() {
+  if (window.pageYOffset >= sticky) {
+    summary.classList.add("sticky")
+  } else {
+    summary.classList.remove("sticky");
+  }
+}
+
+/****************************save button ***********************************/
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction2()};
+
+// Get the navbar
+var savebutton = document.getElementById("savebutton");
+
+// Get the offset position of the navbar
+var sticky = savebutton.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction2() {
+  if (window.pageYOffset >= sticky) {
+    savebutton.classList.add("sticky")
+  } else {
+    savebutton.classList.remove("sticky");
+  }
+}
+/*******************************************Summary saving feature *******************************************************/
+function savefunction(){
+window.location="summarytab.php";
+event.preventDefault();
+}
+/*************************************autosaving feature***************************************************************/
+
+</script>
+<script>
+var formsave1=new autosaveform({    
+	formid: 'feedbackform',
+	pause: 1000 //<--no comma following last option!
+	
+})
+</script>
+<script>
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+/****************************************language tranlation *************************************************************/
+var dict = {
+  "Home": {
+    pt: "Início"
+  },
+  "Download plugin": {
+    pt: "Descarregar plugin",
+    en: "Download plugin"
+  }
+}
+var translator = $('body').translate({lang: "en", t: dict}); //use English
+translator.lang("pt"); //change to Portuguese
+var translation = translator.get("Home"); //returns "Início"
+</script>
+
+
+
+<style>
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  padding: 5px 10px;
+  text-align: center;
+  background: #1abc9c;
+  color: black;
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 30px;
+}
+
+/**************************************Side Navigation Buttons *************************/
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #335;
+  float:left;
+  position:sticky;
+  top:0px;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .navbar{
+  padding-top: 60px;
+}
+
+.summary {
+  position:sticky;
+  top:0px;
+}
+.sticky + .summary{
+  padding-top: 60px;
+}
+
+.savebutton {
+  position:sticky;
+  top:0px;
+}
+.sticky + .savebutton{
+  padding-top: 60px;
+}
+
+
+
+/* Style the navigation bar links */
+.navbar a {
+  float: top;
+  display: block;
+  color: white;
+  text-align: center;
+  padding:10.5px 100px;
+  text-decoration: none;
+}
+
+
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: blue;
+}
+
+
+* {box-sizing: border-box;}
+
+/* Style the navbar */
+.header {
+  overflow: hidden;
+  background-color: #e9e9e9;
+}
+
+/* Navbar links */
+.header a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Navbar links on mouse-over */
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Active/current link */
+.header a.active {
+  background-color: #228B22;
+  color: white;
+}
+
+/* Style the input container */
+.header .search-container {
+  float: right;
+  margin-right: 100px;
+  
+}
+
+/* Style the input field inside the navbar */
+.header input[type=text] {
+  padding: 6px;
+  margin-top: 7px;
+  font-size: 17px;
+  border: none;
+}
+
+/* Style the button inside the input container */
+.header .search-container button {
+  float: right;
+  padding: 6px;
+  margin-top: -40px;
+  margin-right: -80px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.header .search-container button:hover {
+  background: #ccc;
+}
+
+.summary{
+float: right;
+resize: auto;
+overflow: auto;
+}
+
+
+
+.summary .savesummary button{
+   float: bottom;
+   padding: 6px;
+   margin right: 16px
+}
+
+/****************************************The Autosave Switch *******************/
+
+/* The switch - the box around the slider */
+.switch {
+  float: right; 
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 10px;
+  left: 3px;
+  bottom: 1px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 20px;
+}
+
+.slider.round:before {
+  border-radius: 30%;
+}
+
+
+/******************************************/* form for capture ****************************/
+
+.container{
+float: right;
+right: 100px;
+overflow: auto;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+div.savestatus{ /* Style for the "Saving Form Contents" DIV that is shown at the top of the form */
+width:200px;
+padding:2px 5px;
+border:1px solid gray;
+background:#fff6e5;
+-webkit-box-shadow: 0 0 8px #818181;
+box-shadow: 0 0 8px #818181;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius:5px;
+color:red;
+position:fixed;
+left: 10px;
+top:10px;
+}
+
+#feedbackform{ /*CSS used by demo form*/
+margin-top:0px;
+margin-bottom:9px;
+margin-left:400px;
+margin-right: 0px;
+}
+
+img {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    left:70px;
+    top:10px;
+}
+
+
+
+
+
+
+
+</style>
+
+
+</head>
+<body>
+
+<div class="row">
+    <img src="http://localhost/Scripts/trialapp icon.png", 
+     height = 50 width = 50/>
+</div>
+
+
+<div class="w3-container">
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-4" style="overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;">
+      <header class="w3-container w3-dark-grey"> 
+        <span onclick="document.getElementById('id01').style.display='none'" 
+        class="w3-button w3-display-topright">&times;</span>
+        <h2>HELP</h2>
+		
+      </header>
+      <div class="w3-container">
+        <p>A. COMMON ISSUES MONITORED IN PROCEEDINGS</p>
+<p>Issues monitored at trial stage</p>
+<ul class="a" style = "list-style-type: square;">
+<span class="trn">
+<li>	Right to a public hearing</li>
+<li>	Right to a competent, independent and impartial court</li>
+<li>	Right to be present at trial and to defend oneself (including having adequate time and facilities to review the evidence and prepare a defence)</li>
+<li>	Right to legal counsel at trial (including instruction on this right, right to free legal assistance in certain circumstances, and effectiveness of defence counsel)</li>
+<li>	Equality of arms (including right to present evidence, call and examine witnesses, and to have adequate time for preparation of defence)</li>
+<li>	Application of the presumption of innocence and burden of proof</li>
+<li>	Right not to be compelled to confess guilt, and qualified right to silence at trial</li>
+<li>	Right to be tried without undue delay (reasons for delays and other problems related to postponing and adjourning hearings)</li>
+<li>	Right to an interpreter</li>
+<li>	Right to security and liberty (also connected to the right to be tried without undue delay while in detention)</li>
+<li>	Right to a public and reasoned judgement on guilt and punishment</li>
+<li>	Victim's rights issues, including right to a lawyer, compensation, and protection and support mechanisms</li>
+<li>	Application of other domestic procedures and rules related to the conduct of effective and fair trials</li>
+<li>	Professionalism and performance issues related to legal practitioners</li>
+<li>	Specific victim and/or witness rights, juvenile justice, or the implementation of other laws in open, closed or non-public hearings</li></ul>
+<p>	Issues monitored at pre-trial proceedings</p></span>
+<ul class="a" style = "list-style-type: square;">
+<li>	Right to a competent, independent and impartial judicial authority</li>
+<li>	Right to prompt judicial review upon arrest, and related issues (legal basis of custody, opportunity of detainee to be heard by a judicial officer, and regularity of custody review)</li>
+<li>	Right of the suspect to be informed of her/his rights upon questioning</li>
+<li>	Right of the suspect to information at the time of judicial review of custody (including right to be informed of charges)</li>
+<li>	Right to be free from torture and other inhuman and degrading treatment</li>
+<li>	Right to legal counsel at the pre-trial stage, including at the custody hearing</li>
+<li>	Right to trial within a reasonable time after detention</li>
+<li>	Right to an interpreter</li>
+<li>	Rights of witnesses/victims to security (protection) and support (i</li>e</li> psychological and other)</li>
+<li>	Other specific issues for vulnerable victims, witnesses and suspects (including respect for their situation and existence of relevant institutions and mechanisms in this regard)</li></ul>
+
+<p> Other issues that may be monitored through additional sources of information </p>
+<ul class="a" style = "list-style-type: square;">
+<li>	Rights upon arrest (including the right to be notified of reasons for arrest, right to counsel, right not to be compelled to confess guilt, right to silence and right to an interpreter)</li>
+<li>	Right of detainees to have access to the outside world</li>
+<li>	Right to humane conditions and to be free from torture</li>
+<li>	Right to challenge lawfulness of detention</li>
+<li>	Right to appeal judicial orders, decisions and verdicts</li>
+<li>	Rights of witnesses/victims to security (protection) and support (psychological and other)</li>
+<li>	Perception of the justice system by the public</li>
+<li>	Right to a competent, independent and impartial court (including indications of threats to justice actors, corruption, etc)</li>
+<li>	Effectiveness of court administration (availability of courtrooms, case-management systems and facilities, accessibility of criminal records, etc</li></ul>
+
+<hr>
+<p>  POSSIBLE ISSUES TO EXAMINE WHEN MONITORING TRIAL PROCEEDINGS</p>
+<ul class ="a" style = "list-style-type: square;">
+ <p>Right to a public hearing Check whether: </p>
+ 
+<li>	A trial schedule is compiled and, if it is, whether it accurately depicts all hearings and is placed in public view (e</li>g</li>, on an announcement board) or is easily accessible to the public</li>
+<li>	There is a culture among judges of accepting in the courtroom members of the public with no di-rect interest in the proceedings, and whether attendance at proceedings is allowed without bias as to the affinity of the public with one party or another</li>
+<li>	The courtroom assigned to a specific hearing is too small relative to the expected public interest and despite the fact that a larger courtroom could have been allocated</li>
+<li>	The hearing takes place in the office of the judge, without due reason</li>
+<li>	There are unreasonable restrictions placed on the public entering the courtroom after the pro-ceedings are in session</li>
+<li>	Media are permitted to enter a courtroom and whether any permission required is denied with-out explanation</li>
+<li>	The court strikes a case-by-case balance of interests in declaring a trial or hearing closed, and whether it considers other less stringent measures to protect the concerned interests</li>
+<li>	Other such measures, less stringent than declaring the hearing closed, are available in the legal system e.g the assignment of pseudonyms or testimony provided by video-link as alternative protective measures for vulnerable witnesses)</li>
+ Right to a competent, independent and impartial court</li> Check whether:
+<li>	There are any objective or perception-based indicators that judges assigned to a case do not have the legal qualifications to try them (e</li>g</li>, a minor-offence court judge being assigned to a panel on a war crimes case)</li>
+<li>	A diversity of competent judges is promoted, thus avoiding perceptions that qualified persons of different genders, ethnic or religious backgrounds are deliberately excluded from administering justice in specific cases</li>
+<li>	The judges assigned to a specific case are appointed on the basis of an objective system - such as a lottery - and, if random assignment is overridden, that this is done on the basis of a reasoned decision</li>
+<li>	Judges are enabled by the system to decide independently on a matter, or whether they consider themselves bound by external factors, (e</li>g</li>, a judge refusing to review an administrative instruc-tion or considering her/himself bound by a detention order imposed by a foreign court or con-sidering her/himself unable to review well-grounded suspicion for the continuation of pre-trial detention)</li>
+<li>	Judges treat favourably or more cordially one party in relation to another in their communica-tion, or whether trial judges or higher level judges publicly express an opinion that jeopardizes the presumption of innocence in a case</li>
+<li>	Judges adjudicating a case are continuously present during the trial and the bench is properly composed</li>
+<li>	There have been threatening statements made against the judiciary by political actors or parties to the proceedings in relation to the outcome of a case</li>
+<li>	Allegations of corruption or undue influence on the judges of a case are made by parties or there is such a perception of lack of integrity among the public</li>
+<li>	The court appears not to take due notice of the arguments or proposals made by the defence or prosecution, or rejects them without due justification</li>
+<li>	The decisions and judgements of the court contain justifications as to the evidence or law they have considered in reaching them</li>
+<li>	Evidence not presented in court is taken into consideration in reaching a verdict (also connected to the right to oral proceedings and the right to a public trial)</li>
+<li>    The system provides judges with security of tenure and decent compensation and 
+the evaluation of judges takes into account factors that limit their independence 
+and has an impact on their conduct e.g. giving negative evaluations of judges who express minority opinions)</li></ul>
+<p>Right to be present at trial and right to defend oneself. Check whether:</p>
+<ul class ="a" style = "list-style-type: square;">
+
+<li>The court has duly summoned a defendant for proceedings, and whether defendants tried in ab-sentia have a real opportunity to challenge verdicts reached in their absence</li> 
+<li>A defendant removed temporarily from proceedings is represented by counsel and informed about what took place in her/his absence</li>
+<li>The accused is given a real opportunity to present evidence in her/his favour, and whether s/he has access to evidentiary material, especially if s/he so requests</li>
+<li>There are claims or indicators suggesting that the prosecution has suppressed exonerating evidence</li>
+<li>A defendant's testimony has allegedly been extracted under pressure, the defendant claims to have received threats aimed at preventing her/him from presenting a defence, or the defendant is alleged to have been pressured into covering up other co-perpetrators, and whether such alle-gations are properly investigated</li>
+<li>The defendant has a real opportunity to review the record of any testimony s/he provides and signs</li>
+<li>The defendant has adequate time to prepare a defence against evidence presented by the prose-cution or gathered by the court and Witnesses called by the defence are pressured not to testify</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <footer class="w3-container w3-dark-grey">
+        
+      </footer>
+    </div>
+  </div>
+</div>
+
+
+<div class="header">
+  <h1>Trial Observation Reporting Application</h1>
+  <p>For Policymakers and activists</p>
+  <a class="active" href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <a href="#help" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Help</a>
+     <div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit">Search</button>
+    </form>
+   </div>
+</div>
+
+<div class="navbar">
+  <div class = "Personalinfo">
+    <a href="#first">PERSONAL INFORMATION</a>
+      
+  </div>
+  <div class = "Generalinfo">
+    <a href="#second">GENERAL INFORMATION</a>
+      
+  </div>
+  <div class = "BAIL">
+    <a href="#third">BAIL</a>
+      
+  </div>
+  <div class = "IMPARTIALITY">
+    <a href = "#fourth">IMPARTIALITY</a>
+      
+  </div>
+  <div class = "PUBLIC">
+    <a href="#fifth">PUBLIC</a>
+
+  </div>
+  <div class = "INNOCENCE">
+    <a href="#sixth">INNOCENCE</a>
+	  
+  </div>
+  <div class = "DISCLOSURE">
+    <a href="#seventh">DISCLOSURE</a>
+	  
+  </div>
+  
+  <div class = "PREPARATION">
+    <a href="#eighth">PREPARATION</a>
+	 
+  </div>
+  <div class = "TIME">
+    <a href="#ninth">TIME</a>
+
+  </div>
+  <div class = "PRESENCE">
+    <a href="#tenth">PRESENCE</a>
+	  
+  </div>
+  <div class = "LAWYER">
+    <a href="#eleventh">LAWYER</a>
+	  
+  </div>
+  <div class = "WITNESSES">
+    <a href="#twelfth">WITNESSES</a>
+	   
+  </div>
+  <div class = "INTERPRETER">
+    <a href="#thirteenth">INTERPRETER</a>
+	    
+  </div>
+  <div class = "REASONS">
+     <a href="#fourteenth">REASONS</a>
+	    
+  </div>
+  
+</div>  
+
+
+
+
+
+
+
+
+<form id = "feedbackform" action="oci.php" style="color:black;" method = "post" align="left" width="50" height="48">
+  <div class = "summary"><textarea id = "summary" style = "position:sticky;float:right;height:570px" id="subjectsummary" name = "subjectsummary" 
+    placeholder="Write summary.."></textarea></div>
+  <div class = "savebutton"><button id = "savebutton" style = "float:right;position:relative;right:-40px;top: 580px;border-radius: 4px;" >save</button></div>
+  <fieldset style="width:0px">
+    <legend> Case Reference </legend>
+	Case ID:
+    <input id = "caseid" type="text" name="caseid" >
+	<br>
+	<hr>
+    <h1 id = "first" style = "font-size:20px;">PERSONAL INFORMATION</h1>
+    Name of Observer:
+    <input id = "fullnameval" type="text" name="fullname" ><br>
+    Observation date and hours:
+    <input id = "dateofobsval" type="text" name="dateofobs" ><br><br>
+	Report Submission date:
+    <input id = "dateval" type="text" name="date" placeholder = "dd-mm-yyyy" ><br><br>
+	Time Spent in Court:
+    <input id = "timespentval" type="text" name="timespent" ><br><br>
+	Date of next hearing:
+    <input id = "nexthearingval" type="text" name="nexthearing" ><br><br>
+	Changes in data since last observation:
+    <input id = "changesval" type="text" name="changes" ><br><br>
+	Any other observers attended whole or part of the hearing?:
+    <input id = "anyobserversval" type="text" oninput="canChangeColor()" name="anyobservers" ><br><br>
+  <br>
+  <br>
+  <hr>
+    <h1 id = "second" style = "font-size:20px;">GENERAL INFORMATION</h1> <br> 
+	Full name of the defendant/s:
+	<input type="text" name="defname" ><br><br>
+	Gender of the defendant/s:
+	<input type="text" name="defgender" ><br><br>
+	Date of birth of the defendant/s:
+	<input type="text" name="defdob" ><br><br>
+	Factual description and legal qualification of the
+	alleged conduct of the defendant/s under the
+	Criminal Code, according to the prosecution::
+	<textarea name="defdescription" rows="10" cols="85"></textarea><br><br>
+	Type of proceedings (general, accelerated, other - indicate):
+	<input type="text" name="deftype" ><br><br>
+	Name of the court where the case is tried:
+	<input type="text" name="defcourt" ><br><br>
+	Full name of the judge(s) hearing the case:
+	<input type="text" name="defjudge" ><br><br>
+	Full name of the prosecutor:
+	<input type="text" name="prosfullname" ><br><br>
+	Full name and contact details (if available) of the defence counsel:
+	<input type="text" name="counselfullname" ><br><br>
+	Time of opening and closing of the hearing:
+	<input type="text" name="timeopen" ><br><br>
+	How did you learn where the hearing would take place:
+	<input type="text" name="hearinglocation" ><br><br>
+	Preventive measure of restraint applied toward the defendant:
+	<input type="text" name="restraintmeasure" ><br><br>
+	Additional information about the defendant 
+	(Place of work, marital status, political affiliation, memÂ¬bership of organization(s), juvenile at time of crime and sentencing, etc.):
+	<input type="text" name="addinfo" ><br><br>
+	Is mental capacity an issue with regard to defendant(s)?
+	<input type="text" name="mentalcap" ><br><br>
+	What action(s)/decision(s) did the court undertake in this regard?
+	<input type="text" oninput="canChangeColor1()" name="courtdecision" ><br><br>	
+	<br>
+	<hr>
+    <h1 id = "third" style = "font-size:20px;">BAIL CONDITIONS</h1>
+    <br>
+	A written undertaking not to leave and to maintain proper behaviour:
+	<input  type="radio" name = "confirmation1"  value = "yes" checked>Yes <input type="radio" name = "confirmation1" value = "no" >No<br><br>
+	Detention:
+    <input type="radio" name = "confirmation2" value = "yes" checked>Yes <input type="radio" name = "confirmation2" value = "no" >No<br><br>
+	Bail:
+	<input type="radio" name = "confirmation3" value = "yes" checked>Yes <input type="radio" name = "confirmation3" value = "no" >No<br><br>
+	Leaving a military person under supervision of military-unit management::
+	<input type="radio" name = "confirmation4" value = "yes" checked>Yes <input type="radio" name = "confirmation4" value = "no" >No<br><br>
+	Leaving a minor under supervision:
+	<input type="radio" name = "confirmation5" value = "yes" checked>Yes <input type="radio" name = "confirmation5" value = "no" >No<br><br>
+	Personal Guarantee:
+	<input type="radio" name = "confirmation6" value = "yes" checked>Yes <input type="radio" name = "confirmation6" value = "no" >No<br><br>
+	House Arrest:
+	<input type="radio" name = "confirmation7" value = "yes" checked>Yes <input type="radio" name = "confirmation7" value = "no" >No<br><br>	
+	When and where was the defandant arrested?
+	<input type="text" name="arrest location" ><br><br>
+	What police station/ prison was he/she taken to after the arrest?
+	<input type="text" oninput="canChangeColor2()" name="policestation" ><br><br>
+	<br>
+	<hr>
+    <h1 id ="fourth" style = "font-size:20px;">IMPARTIAL</h1>
+	<br><br>
+	THE RIGHT TO TRIAL BY A COMPETENT, INDEPENDENT AND IMPARTIAL COURT ESTABLISHED BYLAW 
+	<br><br>
+	Was the right to challenge the court's composition explained by the judge?:
+    <input type="text"  name="judgeexplain" ><br><br>
+	Were any challenges made in the case?:
+	<input type="radio" name = "challenges" value = "yes" checked>Yes <input type="radio" name = "challenges" value = "no" >No<br><br>
+	        By whom? :<input type="text" style = "width:500px;" name="whomentry" ><br><br>	
+			On which grounds?: <input type="text" style = "width:500px;" name="groundentry" ><br><br>	
+	Did the judge take into consid-eration the age, general level of capacity, physical and mental condition of the defendant when elucidating her/his procedural rights?:<br>
+	<input type="radio" name = "judgeconsid" value = "yes" checked>Yes <input type="radio" name = "judgeconsid" value = "no" >No<br><br>
+	Did the judge maintain impartiality while trying the case?
+	<input type="radio" name = "judgeimpartiality" value = "yes" checked>Yes <input type="radio" name = "judgeimpartiality" value = "no" >No<br><br>
+	Did the judge speak or act tact-lessly or allow unethical state-ments or actions in respect of any of the participants of the process?:
+	<input type="radio" name = "judgespeak" value = "yes" checked>Yes <input type="radio" name = "judgespeak" value = "no" >No<br><br>
+	Did the court retire to the delib-eration chambers at the conclu-sion of the hearing?:<br>
+	<input type="radio" name = "courtretire" value = "yes" checked>Yes <input type="radio" name = "courtretire" value = "no" >No<br><br>	
+	How long did the deliberations take?
+	<input type="text" name="deliberations" ><br><br>
+	Did the panel leave alone to make its deliberations?
+	<input type="radio" oninput="canChangeColor3()" name = "leavealone" value = "yes" >Yes <input type="radio" name = "leavealone" oninput="canChangeColor3()" value = "no" >No<br><br>
+	<br><br>
+	<hr>
+	<h1 id = "fifth" style = "font-size:20px;">PUBLIC</h1>
+	<br>
+	THE RIGHT TO A PUBLIC HEARING
+	<br><br>
+	Describe how you entered the court building (was any ID presented)Were you registered as visitors?:
+    <input type="text"  name="enterbuilding" ><br><br>
+	Permission:  (agreement with court official or judge required / obtained?):
+	<input type="text" name="permission" ><br><br>	
+	Was anyone denied access to the courtroom?:
+	<input type="radio" name = "deniedaccess" value = "yes" checked>Yes <input type="radio" name = "deniedaccess" value = "no" >No<br><br>
+	Did the judge maintain impartiality while trying the case?
+	<input type="radio" name = "judgeimpartiality" value = "yes" checked>Courtroom <input type="radio" name = "judgeimpartiality" value = "no" >Office of Judge<br><br>
+	In the event it was decided to try the case in a closed hearing, what were the legal grounds for the decision?
+	<input type="text" oninput="canChangeColor4()" name="deliberations" ><br><br>
+	<hr>
+    <h1 id = "sixth" style = "font-size:20px;">INNOCENCE</h1><br>
+	THE RIGHT NOT TO BE COMPELLED TO TESTIFY OR CONFESS GUILT
+    <br><br>
+	Were there any signs or attributes borne by the defendant that created perception of her/ his guilt? (For example, wearing handcuffs, shackles or a prison uniform, or being kept in a cage):<br>
+	<input  type="radio" name = "guiltperception"  value = "yes" checked>Yes <input type="radio" name = "guiltperception" value = "no" >No<br><br>
+	Did any participants in the trial put moral or other pressure on the defendant during the examination?:
+    <input type="radio" name = "morale" value = "yes" checked>Yes <input type="radio" name = "morale" value = "no" >No<br><br>
+	Was the defendant's right not to testify against her/himself or close relatives ex-plained to her/him?:
+	<input type="radio" name = "testification" value = "yes" checked>Yes <input type="radio" name = "testification" value = "no" >No<br><br>
+	Did the defendant exercise this right?:
+	<input type="radio" name = "defendantex" value = "yes" checked>Yes <input type="radio" name = "defendantex" value = "no" >No<br><br>
+	Was it explained to the defendant that s/ he is not bound by any confession or denial of guilt made during pre-trial stages of the case?:
+	<input type="radio" name = "confordenial" value = "yes" checked>Yes <input type="radio" name = "confordenial" value = "no" >No<br><br>
+	Was it explained to the defendant that s/he is not bound to answer questions, and that the refusal to answer can not be held against her/him?:
+	<input type="radio" name = "answerrefusal" value = "yes" checked>Yes <input type="radio" name = "answerrefusal" value = "no" >No<br><br>
+	Did the prosecution or court seek to draw any adverse inferences from the exercise by the defendant of her/his right to silence?:
+	<input type="radio" name = "adverseinferences" value = "yes" checked>Yes <input type="radio" name = "adverseinferences" value = "no" >No<br><br>	
+	Did the judge pressure the defendant to plead guilty?:
+	<input type="radio" name = "judgepressure" value = "yes" checked>Yes <input type="radio" name = "judgepressure" value = "no" >No<br><br>
+	Quote irrelevant or leading questions and indicate their authors:
+	<textarea name="leadingquest" rows="10" cols="85"></textarea><br><br>
+	Was it suggested that the defendant reach an agreement on admission of guilt with the prosecution (or was the defendant encour-aged to do so) in order to finish the case in a faster manner, or to receive a milder punishment?:
+	<input type="radio" name = "admissionagreement" value = "yes" checked>Yes <input type="radio" name = "admissionagreement" value = "no" >No<br><br>
+	Was the defendant required to testify under oath?
+	<input type="radio" name = "oathtestification" value = "yes" checked>Yes <input type="radio" name = "oathtestification" value = "no" >No<br><br>
+	Were any judgments issued by the court or by public officials suggesting explicitly or im-plicitly the guilt of the defendant either before trial or after an acquittal or a finding of innocence?:
+	<textarea name="judgementguilt" rows="10" cols="85"></textarea><br><br>
+	Was the defendant interrupted whilst testifying? If so, by whom?
+	<textarea name="interruptions" rows="10" cols="85"></textarea><br><br>
+	<hr>
+    <h1 id = "seventh" style = "font-size:20px;">DISCLOSURE</h1><br>
+	THE RIGHT TO THE DISCLOSURE OF THE CASE
+    <br><br>
+	Was the defence/defendant given adequate advance notification of the witnesses or experts that the prosecution intended to call at trial?:
+	<input  type="radio" name = "advancenotification"  value = "yes" checked>Yes <input type="radio" name = "advancenotification" value = "no" >No<br><br>
+	Were the defendant and her/his lawyer granted access to appropriate information, including documents and other evidence that might help the defendant prepare her/his case, to exonerate her/him, or to mitigate the sentence?:
+    <input type="radio" name = "accessinfo" value = "yes" checked>Yes <input type="radio" name = "accessinfo" value = "no" >No<br><br>
+	<hr>
+    <h1 id = "eighth" style = "font-size:20px;">PREPARATION</h1><br>
+	THE RIGHT NOT TO HAVE ADEQUATE TIME FOR THE PREPARATION OF DEFENCE
+    <br><br>
+	Was the defence counsel allowed an opportunity to read and/or make notes from the case files?:
+	<input  type="radio" name = "defenceopportunity"  value = "yes" checked>Yes <input type="radio" name = "defenceopportunity" value = "no" >No<br><br>
+	Was the defence counsel provided with a copy of the case files or with any opportunities to make transcripts from any kind of documents without limitations in volume?:
+    <input type="radio" name = "copycasefile" value = "yes" checked>Yes <input type="radio" name = "copycasefile" value = "no" >No<br><br>
+	Were the defendant and her/his legal counsel allowed adequate time to prepare a defence, considering the complexity of the case, the seriousness of the criminal charges faced and the volume of the documentary material to be reviewed?:
+	<input type="radio" name = "adequatetime" value = "yes" checked>Yes <input type="radio" name = "adequatetime" value = "no" >No<br><br>
+	Describe any other obstacles to effective exercise of the right to qualified, competent and effective defence.
+	<textarea name="obstacles" rows="10" cols="85"></textarea><br><br>
+	<hr>
+    <h1 id = "ninth" style = "font-size:20px;">TIME</h1><br>
+	RIGHT TO A TIMELY TRIAL
+	<br><br>
+    Date of alleged offence:
+    <input type="text" name="dateofoffence" placeholder = "dd-mm-yyyy" ><br><br>
+    Date of first arrest:
+    <input type="text" name="firstarrest" placeholder = "dd-mm-yyyy" ><br><br>
+	Date of Charge:
+    <input type="text" name="chargedate" placeholder = "dd-mm-yyyy" ><br><br>
+	Date of first hearing:
+    <input type="text" name="firsthearing" placeholder = "dd-mm-yyyy" ><br><br>
+	Date of first day of trial:
+    <input type="text" name="firstday" placeholder = "dd-mm-yyyy" ><br><br>
+	Date of last day of trial:
+    <input type="text" name="lastday" placeholder = "dd-mm-yyyy" ><br><br>
+	Date of judgment:
+    <input type="text" name="judgementdate" placeholder = "dd-mm-yyyy" ><br><br>
+	Date of sentence:
+	<input type="text" name="dateofsentence" placeholder = "dd-mm-yyyy" ><br><br>
+	<hr>
+    <h1 id = "tenth" style = "font-size:20px;">PRESENCE</h1>
+    <br>
+	THE RIGHT TO BE PRESENT AT THE TRIAL 
+	<br><br>
+	Was the defendant present?:
+	<input  type="radio" name = "defendantpresent"  value = "yes" checked>Yes <input type="radio" name = "defendantpresent" value = "no" >No<br><br>
+	Was the identity of the defendant established?:
+    <input type="radio" name = "defendantidentity" value = "yes" checked>Yes <input type="radio" name = "defendantidentity" value = "no" >No<br><br>
+	Was the defendant explained her/his rights?:
+	<input type="radio" name = "defendantright" value = "yes" checked>Yes <input type="radio" name = "defendantright" value = "no" >No<br><br>
+	Was the defendant allowed to make a final statement?:
+	<input type="radio" name = "finalstatement" value = "yes" checked>Yes <input type="radio" name = "finalstatement" value = "no" >No<br><br>
+	Was the defendant removed from the courtroom during the hearing?:
+	<input type="radio" name = "defendantremove" value = "yes" checked>Yes <input type="radio" name = "defendantremove" value = "no" >No<br><br>
+	Did anyone interrupt the defendant when s/he was making her/his final statement?:<br>
+	<input type="radio" name = "defendantinterruption" value = "yes" checked>Yes <input type="radio" name = "defendantinterruption" value = "no" >No<br><br>
+	if so, who interrupted the defendant?:
+	<input type="text" name="judgementdate" ><br><br>
+	<hr>
+    <h1 id = "eleventh" style = "font-size:20px;">LAWYER</h1>
+    <br>
+	RIGHT TO A LAWYER
+	<br><br>
+	Did you observe any obstacles that prejudiced the defendant's opportunity to fully present her/his defence?
+	<input  type="radio" name = "anyobstacles"  value = "yes" checked>Yes <input type="radio" name = "anyobstacles" value = "no" >No<br><br>
+	Did the judge determine whether a copy of the indictment was handed over in time?:<br>
+    <input type="radio" name = "indictmentcopy" value = "yes" checked>Yes <input type="radio" name = "indictmentcopy" value = "no" >No<br><br>
+	Was the suspect represented by defence counsel throughout entire course of pre-trial stages and all investigative proceedings?:
+	<input type="radio" name = "suspectrepresent" value = "yes" checked>Yes <input type="radio" name = "suspectrepresent" value = "no" >No<br><br>
+	Was defence counsel present? Was s/he appointed or contracted?:
+	<input type="radio" name = "counselpresent" value = "yes" checked>Yes <input type="radio" name = "counselpresent" value = "no" >No<br><br>
+	If defence counsel was appointed, when was s/he introduced to the defendant?:<br>
+	<input type="radio" name = "defendantintro" value = "yes" checked>Yes <input type="radio" name = "defendantintro" value = "no" >No<br><br>
+	In the case of contracted counsel, was the defendant able to choose her/him independently?:
+	<input type="radio" name = "contractedcounsel" value = "yes" checked>Yes <input type="radio" name = "contractedcounsel" value = "no" >No<br><br>
+	Was the defence counsel replaced during the trial? If yes, how many times?:
+	<input type="radio" name = "counselreplaced" value = "yes" checked>Yes <input type="radio" name = "counselreplaced" value = "no" >No<br><br>
+    Was the table of the defence counsel located close to the defendant?:
+	<input type="radio" name = "counsellocation" value = "yes" checked>Yes <input type="radio" name = "counsellocation" value = "no" >No<br><br>
+	Please describe the defence counsel's style of communication with the defendant during the trial. Were communications between the defendant and her/his lawyer restricted by the court in any way?:
+	<textarea name="communicationstyle" rows="10" cols="85"></textarea><br><br>
+	Was the defendant provided with the time and facilities to confer with her/ his lawyer in private, one-on-one, without limitations on time or the number of meetings?:
+	<input type="radio" name = "timeandfacility" value = "yes" checked>Yes <input type="radio" name = "timeandfacility" value = "no" >No<br><br>
+	<hr>
+    <h1 id = "twelfth" style = "font-size:20px;">WITNESSES</h1>
+    <br>
+	RIGHT TO THE EXAMINATION OF WITNESSES
+	<br><br>
+	Did key prosecution witnesses appear in person?:
+	<input  type="radio" name = "personappear"  value = "yes" checked>Yes <input type="radio" name = "personappear" value = "no" >No<br><br>
+	If not why not?:
+    <input type="text" name="personappearnot" ><br><br>
+	Were the defence allowed to question the key witnesses?:
+	<input type="radio" name = "defencequestion" value = "yes" checked>Yes <input type="radio" name = "defencequestion" value = "no" >No<br><br>
+	If not why not?:
+	<input type="text" name="defencequestionnot" ><br><br>
+	Were any witnesses granted anonymity?:
+	<input type="radio" name = "anonymity" value = "yes" checked>Yes <input type="radio" name = "anonymity" value = "no" >No<br><br>
+	If so what reasons were given if any?:
+	<input type="text" name="anonymityreasons" ><br><br>
+	Were any witnesses granted special measures?:
+	<input type="radio" name = "grantedmeasure" value = "yes" checked>Yes <input type="radio" name = "grantedmeasure" value = "no" >No<br><br>	
+	If so - specify - screens, video link, voice distortion:
+	<input type="text" name="specifygrantedmeasure" ><br><br>
+	Was the Defendant allowed to call witnesses for the defence?:
+	<input type="radio" name = "defendantcall" value = "yes" checked>Yes <input type="radio" name = "defendantcall" value = "no" >No<br><br>
+	If not what reasons were given to deny?:
+	<input type="text" name="defendantcallreason" ><br><br>
+	Did the Defence need to ask the court for assistance to secure attendance of any witness?
+	<input type="radio" name = "courtassistance" value = "yes" checked>Yes <input type="radio" name = "courtassistance" value = "no" >No<br><br>
+	Did the Court grant that assistance? Adjournment, witness order.
+	<input type="text" name="anycourtassistance" ><br><br>
+	<hr>
+    <h1 id = "thirteenth" style = "font-size:20px;">INTERPRETER</h1>
+    <br>
+	THE RIGHT TO AN INTERPRETER AND TO TRANSLATION
+	<br><br>
+	Was a translator/interpreter involved in the trial?:
+	<input  type="radio" name = "trialinvolvement"  value = "yes" checked>Yes <input type="radio" name = "trialinvolvement" value = "no" >No<br><br>
+	Did the judge explain to the translator/ interpreter her/his rights?:
+	<input type="radio" name = "rightsexplained" value = "yes" checked>Yes <input type="radio" name = "rightsexplained" value = "no" >No<br><br>
+	Was the translator/interpreter warned about the criminal responsibility for providing knowingly false translation?:
+	<input type="radio" name = "falsetranslation" value = "yes" checked>Yes <input type="radio" name = "falsetranslation" value = "no" >No<br><br>
+	Was the right to challenge the translator/interpreter explained to the parties?:
+	<input type="radio" name = "challengeexplained" value = "yes" checked>Yes <input type="radio" name = "challengeexplained" value = "no" >No<br><br>	
+	Was the defendant given the written translations during the trial of judicial documents required by law to be handed over to the defence?:
+	<input type="radio" name = "writtentranslation" value = "yes" checked>Yes <input type="radio" name = "writtentranslation" value = "no" >No<br><br>
+	In your view, was the translation of good quality?:
+	<input type="radio" name = "goodquality" value = "yes" checked>Yes <input type="radio" name = "goodquality" value = "no" >No<br><br>
+    <hr>
+    <h1 id = "fourteenth" style = "font-size:20px;">REASONS</h1>
+    <br>
+	THE RIGHT TO A PUBLIC JUDGMENT AND THE RIGHT TO A REASONED JUDGMENT
+	<br><br>
+	RECORD OF THE TRIAL
+	<br><br>
+	Is an official protocol and/or official verbatim record being made of the proceeding?:<br>
+	<input  type="radio" name = "verbatimrecord"  value = "yes" checked>Yes <input type="radio" name = "verbatimrecord" value = "no" >No<br><br>
+	Was any audio or video recording of the session conducted?:
+	<input type="radio" name = "videorecording" value = "yes" checked>Yes <input type="radio" name = "videorecording" value = "no" >No<br><br>
+	Was any audio or video recording of the session conducted?:
+	<input type="radio" name = "audiovideo" value = "yes" checked>Yes <input type="radio" name = "audiovideo" value = "no" >No<br><br>
+	Were there any remarks about the content of records from the parties?:
+	<input type="radio" name = "contentrecords" value = "yes" checked>Yes <input type="radio" name = "contentrecords" value = "no" >No<br><br>	
+	Did the judge explain the right to familiarization with the minutes of the hearing?:<br>
+	<input type="radio" name = "familiarization" value = "yes" checked>Yes <input type="radio" name = "familiarization" value = "no" >No<br><br>
+	Have the parties received - within reasonable time - a (translated, if applicable) copy of the records?:
+	<input type="radio" name = "copyofrecords" value = "yes" checked>Yes <input type="radio" name = "copyofrecords" value = "no" >No<br><br>
+	Were there any remarks about the content of records from the parties?:
+	<input type="radio" name = "anyremarks" value = "yes" checked>Yes <input type="radio" name = "anyremarks" value = "no" >No<br><br>	
+	Did the judge explain the right to familiarization with the minutes of the hearing?:<br>
+	<input type="radio" name = "rightfamiliarization" value = "yes" checked>Yes <input type="radio" name = "rightfamiliarization" value = "no" >No<br><br>
+	Have the parties received - within reasonable time - a (translated, if applicable) copy of the records?:
+	<input type="radio" name = "translatedcopyofrecords" value = "yes" checked>Yes <input type="radio" name = "translatedcopyofrecords" value = "no" >No<br><br>
+	<br><br>
+	RENDERING AND ANNOUNCEMENT OF THE JUDGMENT
+	<br><br>
+	What verdict was passed on the merits of the case? Conviction, the sentence is:
+	<input type="text" name="verdictpassed" ><br><br>
+	Did the judge explain to the acquitted person the right to reparation for unlawful acts by the authorities conducting the criminal proceedings?
+	<input type="radio" name = "acquittedperson" value = "yes" checked>Yes <input type="radio" name = "acquittedperson" value = "no" >No<br><br>
+	Was the verdict pronounced in full?
+	<input type="radio" name = "verdictpronounced" value = "yes" checked>Yes <input type="radio" name = "verdictpronounced" value = "no" >No<br><br>
+	Did the court consider/address all the evidence and arguments presented by the parties?
+	<input type="radio" name = "argumentspresented" value = "yes" checked>Yes <input type="radio" name = "argumentspresented" value = "no" >No<br><br>
+	Was the conviction, if any, based solely or to a decisive extent on evidence provided in anonymous testimony at the witness-protection hearing or on evidence exempted from direct presentation (i.e., voice/image distortion)?:
+	<input type="radio" name = "anonymoustestimony" value = "yes" checked>Yes <input type="radio" name = "anonymoustestimony" value = "no" >No<br><br>
+	<br>
+	DID THE FINAL JUDGEMENT INCLUDE (ANNOUNCED AND WRITTEN):
+	<br><br>
+	Description of the criminal act and the means of its commission?
+	<input type="radio" name = "verdictpronounced" value = "yes" checked>Yes <input type="radio" name = "verdictpronounced" value = "no" >No<br><br>
+	Analysis of acts of the defendant in relation to the corpus delicti?:
+    <input type="radio" name = "corpusdelicti" value = "yes" checked>Yes <input type="radio" name = "corpusdelicti" value = "no" >No<br><br>
+	The motive and consequences of the crime?:
+	<input type="radio" name = "motiveconsequences" value = "yes" checked>Yes <input type="radio" name = "motiveconsequences" value = "no" >No<br><br>
+	A decision regarding protection and/ or other special measures?:
+	<input type="radio" name = "specialmeasures" value = "yes" checked>Yes <input type="radio" name = "specialmeasures" value = "no" >No<br><br>
+	Was the alleged offence re-qualified?:
+	<input type="radio" name = "allegedoffence" value = "yes" checked>Yes <input type="radio" name = "allegedoffence" value = "no" >No<br><br>
+	Was the verdict read out clearly?:
+	<input type="radio" name = "readoutclearly" value = "yes" checked>Yes <input type="radio" name = "readoutclearly" value = "no" >No<br><br>
+	Was the verdict well reasoned?:
+	<input type="radio" name = "wellreasoned" value = "yes" checked>Yes <input type="radio" name = "wellreasoned" value = "no" >No<br><br>	
+	After having announced the judgment, did the judge explain to the defendant (and other trial parties) its substance?
+	<input type="radio" name = "explainsubstance" value = "yes" checked>Yes <input type="radio" name = "explainsubstance" value = "no" >No<br><br>
+	Did the judge explain the procedure and terms of appeal of the verdict and the right to request clemency?
+	<input type="radio" name = "explainprocedure" value = "yes" checked>Yes <input type="radio" name = "explainprocedure" value = "no" >No<br><br>
+	Were any interim court resolutions passed during the case?
+	<input type="radio" name = "interimresolutions" value = "yes" checked>Yes <input type="radio" name = "interimresolutions" value = "no" >No<br><br>
+	
+	
+	
+	
+	<input type="submit" value="Submit">
+	
+	
+
+  </fieldset>
+  
+</form>
+
+
+
+
+
+</body>
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+</html>
